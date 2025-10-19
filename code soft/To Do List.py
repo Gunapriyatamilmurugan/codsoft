@@ -1,17 +1,14 @@
 import tkinter as tk
 from tkinter import messagebox
 
-# ---------------- MAIN APP WINDOW ----------------
 root = tk.Tk()
 root.title("📝 My To-Do List")
 root.geometry("650x450")
 root.config(bg="#f0f4f7")
 
-# ---------------- STYLES ----------------
 heading_font = ("Helvetica", 18, "bold")
 task_font = ("Helvetica", 12)
 
-# ---------------- FUNCTIONS ----------------
 tasks = []
 
 def add_task():
@@ -51,7 +48,6 @@ def refresh_tasks():
         del_btn = tk.Button(frame, text="🗑", command=lambda i=i: delete_task(i), bg="#e74c3c", fg="white", width=3)
         del_btn.pack(side="right", padx=5)
 
-# ---------------- LEFT PANEL ----------------
 left_frame = tk.Frame(root, bg="#dceefb", width=220)
 left_frame.pack(side="left", fill="y")
 
@@ -64,12 +60,11 @@ task_entry.pack(pady=10, padx=10)
 add_btn = tk.Button(left_frame, text="Add Task", command=add_task, bg="#1e90ff", fg="white", font=("Arial", 11, "bold"))
 add_btn.pack(pady=5)
 
-# ---------------- RIGHT PANEL ----------------
 right_frame = tk.Frame(root, bg="#f0f4f7")
 right_frame.pack(side="right", fill="both", expand=True)
 
 task_frame = tk.Frame(right_frame, bg="#f0f4f7")
 task_frame.pack(fill="both", expand=True, pady=10)
 
-# ---------------- RUN APP ----------------
 root.mainloop()
+
